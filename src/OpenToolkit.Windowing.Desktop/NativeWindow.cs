@@ -694,7 +694,7 @@ namespace OpenToolkit.Windowing.Desktop
 
                 _keyCallback = (window, key, scancode, action, mods) =>
                 {
-                    var ourKey = GlfwKeyMapping[(int)key];
+                    var ourKey = (int)key < GlfwKeyMapping.Length ? GlfwKeyMapping[(int)key] : Key.Unknown;
 
                     var args = new KeyboardKeyEventArgs(
                         ourKey,
